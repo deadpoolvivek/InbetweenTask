@@ -27,6 +27,9 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+    if(this.router.navigate(['/'])){
+      this.router.navigate(['dashboard']);
+    }
     this.router.events.subscribe(() => {
       if (this.isScreenSmall()) {
         this.sidenav.close();
