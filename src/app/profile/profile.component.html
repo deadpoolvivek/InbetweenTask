@@ -1,0 +1,17 @@
+
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-primary backButton" (click)="goBack()">Back</button>
+    </div>
+    <h2 class="bottomMargin">About User</h2>
+    <img class="card-img-top img" [src]="user?.picture?.medium" alt="Card image">
+    <div class="card" style="width:50%">
+
+        <div class="card-body">
+            <h4 class="card-title"><b>Name : </b>{{user?.name?.first}} {{user?.name?.last}}</h4>
+            <p class="card-text"><b>Gender : </b>{{user?.gender}}</p>
+            <p class="card-text"><b>Email : </b>{{user?.email}}</p>
+            <p class="card-text bottomPadding"><b>Phone : </b>{{user?.phone}}</p>
+        </div>
+    </div>
+</div>

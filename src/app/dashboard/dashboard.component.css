@@ -1,0 +1,19 @@
+.cdkDiv{
+  float: left;
+  width: 48% !important;
+}
+.leftMargin{
+  margin-left: 2% !important;
+}
+.mainContainer{
+  width: 100% !important;
+  max-width: 100% !important;
+  float: left;
+}
+.textFamily{
+  color: #000;
+  text-align: center;
+}
+.userHeader{
+  margin-top: 1%;
+}

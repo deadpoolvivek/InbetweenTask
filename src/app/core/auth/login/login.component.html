@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="login-container">
+  <div class="middle-box">
+    <span class="logo-name">CIDE</span>
+    <h3>Welcome to CIDE Admin</h3>
+    <p>Admin Module</p>
+
+    <form class="form-container" [formGroup]="loginForm" (ngSubmit)="login()">
+      <div fxLayout="row wrap">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <input matInput placeholder="Email" [formControl]="loginForm.controls['email']">
+        </mat-form-field>
+        <small class="warn-text-margin" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="mat-text-warn">Please Enter Your Email Address.</small>
+      </div>
+      <div fxLayout="row wrap">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <input matInput placeholder="Password" [formControl]="loginForm.controls['password']">
+        </mat-form-field>
+        <small class="warn-text-margin" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="mat-text-warn">Please Enter Your Password.</small>
+      </div>
+      <div fxLayout="row wrap">
+          <button mat-button mat-raised class="login-button">
+              Login
+            </button>
+      </div>
+      <!-- <div fxLayout="row wrap" class="forgot_pass" style="float: right;">
+        <a [routerLink]='["/forgot-password"]' >Forgot Password?</a>
+      </div> -->
+    </form>
+  </div>
+</div>
+ 

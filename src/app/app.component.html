@@ -1,0 +1,13 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav-content>
+    <mat-toolbar id="menu-nav" color="primary">
+        <img class="card-img-top imgIB" src="../../assets/images/image003.jpg" alt="Card image">
+
+      <mat-nav-list>
+        <a class="menu-nav primary" mat-list-item [routerLink]="['dashboard']">Dashboard</a>
+      </mat-nav-list>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

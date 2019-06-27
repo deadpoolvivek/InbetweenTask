@@ -1,0 +1,51 @@
+<div class="userHeader">
+  <h2 class="textFamily">User Details</h2>
+</div>
+
+<div class="container mainContainer">
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="listUser" [cdkDropListConnectedTo]="[doneList]" class="example-list cdkDiv leftMargin table-responsive"
+    (cdkDropListDropped)="drop($event)">
+    <h4 class="textFamily">Part 1</h4>
+    <table class="table table-hover table-bordered ">
+      <thead>
+        <tr class="head_tr">
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let user of listUser" cdkDrag (click)="detailUser(user)">
+        <td>{{user?.name?.first}}</td>
+        <td>{{user?.name?.last}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="user.names" [cdkDropListConnectedTo]="[todoList]" class="example-list cdkDiv leftMargin table-responsive"
+    (cdkDropListDropped)="drop($event)">
+    <h4 class="textFamily">Part 2</h4>
+    
+    <table class="table table-hover table-bordered ">
+      <thead>
+        <tr class="head_tr">
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let user of user.names" cdkDrag>
+        <td>{{user?.name?.first}}</td>
+        <td>{{user?.name?.last}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
