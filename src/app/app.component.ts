@@ -11,22 +11,18 @@ const SMALL_WIDTH_BREAKPOINT = 720;
 })
 export class AppComponent implements OnInit {
 
-  title = 'CIDE ADMIN';
+  title = 'Inbetween Test';
   private mediaMatcher: MediaQueryList =
     matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
   users: Observable<any>;
   isDarkTheme = false;
   dir = 'ltr';
   user: any;
-  selectedLanguage;
   @ViewChild(MatSidenav) sidenav: MatSidenav;
-  constructor(zone: NgZone,
-    private router: Router,
-    private route: ActivatedRoute,
-    private userService: UserService) {}
-
+  constructor(zone: NgZone,private router: Router,private route: ActivatedRoute,private userService: UserService) {}
 
   ngOnInit() {
+    //if url is null than it will redirect to dashboard page
     if(this.router.navigate(['/'])){
       this.router.navigate(['dashboard']);
     }
@@ -35,15 +31,10 @@ export class AppComponent implements OnInit {
         this.sidenav.close();
       }
     });
-
   }
 
   isScreenSmall(): boolean {
     return this.mediaMatcher.matches;
-  }
-  toggleDir() {
-    this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr';
-    this.sidenav.toggle().then(() => this.sidenav.toggle());
   }
 
 }
