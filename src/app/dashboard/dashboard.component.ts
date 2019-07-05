@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    //function call to get 20 user records
+    //function call to get 20 user records.
     this.getUSers();
   }
 
